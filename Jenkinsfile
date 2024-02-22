@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'jenkins-slave '
     }
+    tools {
+        maven 'mymaven'
+    }
     stages {
         stage('Clone Repository') {
             steps {
@@ -12,8 +15,6 @@ pipeline {
         stage('Maven Build') {
             steps {
                 script {
-                    mkdir mymaven
-                    cd mymaven
                     sh "mvn clean package"
                 }
             }
