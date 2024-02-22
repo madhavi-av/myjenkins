@@ -4,6 +4,7 @@ pipeline {
     }
 
     stages {
+        def mymaven = tool name :"maven3.9.6"
         stage('Clone Repository') {
             steps {
                 git 'https://github.com/madhavi-av/myjenkins.git' 
@@ -13,7 +14,7 @@ pipeline {
         stage('Maven Build') {
             steps {
                 script {
-                    sh 'mvn clean package' 
+                    sh "${mymaven}/bin/mvn clean package' 
                 }
             }
         }
