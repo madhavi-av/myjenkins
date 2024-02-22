@@ -2,8 +2,8 @@ pipeline {
     agent {
         label 'jenkins-slave '
     }
-    def mymaven = tool name : 'maven3.9.6'
     stages {
+        def mymaven = tool name : "maven3.9.6"
         stage('Clone Repository') {
             steps {
                 git 'https://github.com/madhavi-av/myjenkins.git' 
