@@ -23,7 +23,7 @@ pipeline {
         stage('Run JAR file') {
             steps {
                 script {
-                    sh 'java -jar MyApp/target/MyApp-1.0-SNAPSHOT.jar' 
+                    sh 'java -jar MyApp/target/myapp.jar' 
                 }
             }
         }
