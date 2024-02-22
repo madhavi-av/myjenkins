@@ -2,7 +2,9 @@ pipeline {
     agent {
         label 'jenkins-slave '
     }
-    def mymaven = tool name : 'maven3.9.6'
+    tools {
+        maven 'mymaven'
+    }
     stages {
         stage('Clone Repository') {
             steps {
@@ -13,9 +15,7 @@ pipeline {
         stage('Maven Build') {
             steps {
                 script {
-                    mkdir mymaven
-                    cd mymaven
-                    sh "${mymaven}/bin/mvn clean package"
+                    sh "mvn clean package"
                 }
             }
         }
