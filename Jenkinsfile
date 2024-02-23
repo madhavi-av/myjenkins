@@ -23,7 +23,7 @@ pipeline {
         stage('Run JAR file') {
             steps {
                 script {
-                    sh "java -jar /home/ubuntu/workspace/myfirstjenkins/target/MyApp-1.0-SNAPSHOT.jar"
+                    sh "java -jar /home/ubuntu/workspace/myfirstjenkins/target/MyApp-1.0-SNAPSHOT.jar > output.log"
                 }
             }
         }
